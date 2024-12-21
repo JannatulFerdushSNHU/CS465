@@ -1,57 +1,37 @@
-# CS-465-Portfolio
+# Architecture
 
-Portfolio containing assignments and projects from CS-465 Full Stack Development I.
+## Frontend Development Comparison
 
-- Code
-  - [Application Backend Server](../app_server/)
-  - [Application APIs](../app_api/)
-  - [Application Admin Portal](../app_admin/)
-- Assignments
-  - [Software Design Document](Software%20Design%20Document.pdf)
-  - [Project Reflection](#project-reflection)
-    - [Architecture](#architecture)
-    - [Functionality](#functionality)
-    - [Testing](#testing)
-    - [Reflection](#reflection)
+In this project, I deployed Express HTML and JavaScript to handle the development at the frontend level. Express HTML is a software that allows face changing on the server side with the help of data of HTML page. On the other hand, JavaScript was used for making the interactions, handling the events, or performing actions such as form validation, loading new content on the page on the button click, or performing the API calls etc.
 
-## Project Reflection
+I also looked at Single Page Application (SPA) architecture, in which only a single HTML page is loaded and content is updated without having to reload the page. It makes the user experience much better this way. Unlike dull HTML rendering where every new page opening involves a request to the server, SPAs use JS frameworks such as React or Angular to assist in managing the transitions and dynamic updates of pages.
 
-### Architecture
+## Why Choose NoSQL MongoDB for the Backend?
 
-#### Compare and contrast the types of frontend development you used in your full stack project, including Express, HTML, JavaScript, and the single-page application (SPA)
+This particular application has the backend support of NoSQL MongoDB as its database. MongoDB is a NoSQL database that stores data in JSON-like documents, which are schema-free. This is ideal for use in applications like ours since it is able to deal with unstructured data and has simple scalability. For example, in this project, the choice of MongoDB as the NoSQL database allowed for the data storage of other data types provided as users’ profiles, orders, and product details. This was especially useful in a dynamic application where the structure might change over time.
 
-One portion of the site used Express, HTML, and JavaScript to display the pages.  Using Express and JavaScript, routes and controllers were created to handle requests from the browser for a page.  Express would then either retrieve the static HTML page or generate the requested page using a handlebars templates populated with data from the database.  These are all different tools that were working together to handle server requests and sending the result to the frontend client.
-The Angular portion of the project worked differently.  Upon the first load of the page, the entire single page application (SPA) is sent to the client.  Once there all page rending and code execution takes place client side in the browser.  Calls to the backend are only needed to retrieve data from the database.
-With Express, there are many calls to the server, each time the page is loaded or refreshed.  With a SPA, the initial load takes longer to get all of the code from the backend.  After that initial load though, no additional calls to the server are needed for navigating between pages withing the SPA.
+# Functionality
 
-#### Why did the backend use a NoSQL MongoDB database?
+## JSON vs JavaScript and Its Role in Full Stack Development
 
-MongoDB can scale well and query quickly.  The documents stored in MongoDB align well with JSON formatting, making it a good match for use with frontend applications.
+JSON is a lightweight data markup language used to represent the data to be transferred to the front end, stored, and retrieved. It is very clear to see that JSON is just a data format with key-value attributes, unlike JavaScript, which is a programming language. JSON is used to transmit data from the backend (server) to the frontend (client). In my full stack project, JSON was used to pass information between the frontend and the backend, such as providing user credentials or product details.
 
-### Functionality
+## Refactoring Code for Better Functionality
 
-#### How is JSON different from JavaScript and how does JSON tie together the frontend and backend development pieces?
+Refactoring Code for Better Functionality is the process of restructuring existing code to improve performance and maintain functionality. I had to "recode" the application multiple times to smoothen and optimize its operations. For instance, I developed reusable UI elements like buttons, form inputs, and navigation bars. This approach kept the code more consistent, reduced the amount of code, and made the project more efficient. However, there were challenges to reusability—if one component changed, the adjustments would ripple across the entire project, making it faster and less prone to mistakes.
 
-JSON is a specification for how to format data.  It can be used with a variety of programming languages.  JavaScript is a programming language that uses JSON to define objects.  The frontend and backend are tied together through the use of APIs and JSON.  RESTful APIs use JSON to receive requests and send responses.
+# Testing
 
-#### Provide instances in the full stack process when you refactored code to improve functionality and efficiencies and name the benefits that come from reusable user interface (UI) components
+## API Testing and Security
 
-One example of improving functionality through refactoring was replacing some of the static HTML pages with templates using Handlebars.  This allowed for the structure of a page to be reused while being able to change the content displayed.  Another refactor involved moving the content used for populating the templates out of static JSON files kept within the codebase and into MongoDB.  This allows for content data to be added or changed without having to deploy and code changes to the website.
+In full stack development, API testing is crucial to check the functionality of the endpoints that enable frontend and backend communication. I used tools like Postman to test various endpoints for actions like login, creating orders, retrieving data, and more. When security features like JWT authentication were added, testing became more complex, as each request needed a valid token. This added an extra layer of security, ensuring that only authorized users could access certain endpoints.
 
-### Testing
+Security also played a major role during the testing of the login feature. Ensuring that password hashing and session management were secure required careful attention to prevent unauthorized access to sensitive user data.
 
-*Methods for request and retrieval necessitate various types of API testing of endpoints, in addition to the difficulties of testing with added layers of security.*
+# Reflection
 
-#### Explain your understanding of methods, endpoints, and security in a full stack application
+## What I Learned from This Course in Achieving My Professional Objectives
 
-HTTP methods are different type of interaction that a client can have with a server.  Some of the most common HTTP methods include GET, POST, PUT, and DELETE.  The API endpoints are how the client can communicate with the server using these HTTP methods.  Security, in regards to this full stack application, consisted of authenticating a user and giving them a valid JWT so that they could access some of the endpoints.
+This course has been quite useful in my journey to becoming a full stack developer. It taught me both the frontend and backend sides of application development, and now I am comfortable working with HTML, JavaScript, MongoDB, and Express.js. I have learned how to organize the components and structure of a full stack web application from scratch, reinforcing my coding skills.
 
-### Reflection
-
-#### How has this course helped you in reaching your professional goals?
-
-This course has helped to expand my knowledge of full stack development and introduced me to some technologies I have not used before, such as Express.  In my professional career as a full stack developer, all of my work has been on existing projects.  I have not had the opportunity to start a full stack application from the beginning.  This allowed me to better see and understand how all the different parts of a full stack application fit together.
-
-#### What skills have you learned, developed, or mastered in this course to help you become a more marketable candidate in your career field?
-
-My JavaScript skills have improved from the practice received in this course using it.  It also gave me the opportunity to use JavaScript on the backend with Node.js and Express.  I have seen knowledge of Node.js listed as a requirement or preferred skill for many positions, so it is good to know the basics of an in-demand skill.
+The knowledge gained from this course will help me be well-equipped for software development roles, especially in areas like API integration, secure authentication, and frontend responsiveness. These skills will make me more marketable when seeking a position in any software development company. The experience I gained from working on a real-world project will also enable me to stand out to potential employers and demonstrate my ability to handle challenging tasks effectively.
